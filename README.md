@@ -37,8 +37,11 @@ The goal of this project is to learn and implement **professional architecture**
 - [x] Transaction management
 - [x] Order management
 - [x] Full CRUD for all entities
-- [ ] Validation
-- [ ] Exception handling
+- [x] DTO Pattern (Request/Response)
+- [x] Mapper Pattern
+- [x] Validation (`@Valid`, `@NotBlank`, `@Email`, `@Pattern`)
+- [x] Global Exception Handling
+- [x] Custom ErrorResponse
 - [ ] API testing with Postman
 
 ### 📋 Phase 2: Security
@@ -239,11 +242,37 @@ Content-Type: application/json
 }
 </pre>
 
+
+**Validation Error Response (400 Bad Request):**
+
+<pre>
+{
+"timestamp": "2026-09-20T11:10:00",
+"status": 400,
+"error": "Validation Failed",
+"message": "One or more fields are invalid",
+"path": "/api/users",
+"validationErrors": {
+"username": "Username must be between 3 and 50 characters",
+"email": "Email should be valid",
+"password": "Password must be at least 6 characters"
+}
+}
+</pre>
 ---
 
 ## 🗺️ Roadmap
 
 - [ ] Phase 1: Core (In Progress)
+    - [x] Entities, Repositories, Services
+    - [x] DTO Pattern
+    - [x] Mapper Pattern
+    - [x] Validation
+    - [x] Global Exception Handling
+    - [ ] Wallet APIs
+    - [ ] Transaction APIs
+    - [ ] Order APIs
+    - [ ] API Testing with Postman
 - [ ] Phase 2: Security & JWT
 - [ ] Phase 3: Advanced Business Logic
 - [ ] Phase 4: Multi-threading

@@ -1,6 +1,7 @@
 package com.fintech.paymentsystem.service;
 import com.fintech.paymentsystem.entity.User;
 import com.fintech.paymentsystem.entity.Wallet;
+import com.fintech.paymentsystem.entity.enums.UserRole;
 import com.fintech.paymentsystem.repository.UserRepository;
 import com.fintech.paymentsystem.repository.WalletRepository;
 import jakarta.transaction.Transactional;
@@ -24,6 +25,9 @@ public class UserService {
         if(userRepository.existsByEmail(user.getEmail())){
             throw new RuntimeException("Email already exists");
         }
+
+        user.setRole(UserRole.USER);
+        user.setEnabled(true);
 
         User savedUser=userRepository.save(user);
 

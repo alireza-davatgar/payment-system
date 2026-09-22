@@ -41,6 +41,7 @@ public class Wallet {
     private BigDecimal creditLimit;
 
     // Amount of credit currently used.
+    @Builder.Default
     @Column(name = "used_credit", precision = 19, scale = 2)
     private BigDecimal usedCredit = BigDecimal.ZERO;
 

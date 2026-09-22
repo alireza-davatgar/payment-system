@@ -50,4 +50,6 @@ public class UserController {
         var user =userService.getUserByUsername(username);
         return ResponseEntity.ok(userMapper.toResponse(user));
     }
+
+
 }

@@ -36,7 +36,10 @@ public class UserService {
                 .user(savedUser)
                 .balance(BigDecimal.ZERO)
                 .blockedBalance(BigDecimal.ZERO)
+                .usedCredit(BigDecimal.ZERO)
                 .build();
+        walletRepository.save(wallet);
+
         return savedUser;
     }
 

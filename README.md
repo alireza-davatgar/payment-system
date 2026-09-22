@@ -209,6 +209,16 @@ http://localhost:8080/api/users
 | GET | `/api/users/{id}` | Get user by ID |
 | GET | `/api/users/username/{username}` | Get user by username |
 
+### Wallet APIs
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/wallets/{id}` | Get wallet by ID |
+| GET | `/api/wallets/user/{userId}` | Get wallet by user ID |
+| GET | `/api/wallets/number/{walletNumber}` | Get wallet by wallet number |
+| POST | `/api/wallets/{id}/deposit` | Deposit money |
+| POST | `/api/wallets/{id}/withdraw` | Withdraw money |
+
 ### Sample Request
 
 **Create User:**
@@ -269,7 +279,8 @@ Content-Type: application/json
     - [x] Mapper Pattern
     - [x] Validation
     - [x] Global Exception Handling
-    - [ ] Wallet APIs
+    - [x] Wallet APIs (Deposit, Withdraw)
+    - [x] API testing with Postman (User & Wallet)
     - [ ] Transaction APIs
     - [ ] Order APIs
     - [ ] API Testing with Postman
